@@ -174,23 +174,33 @@ The following command can be run from the root of the RE directory to install th
 If you get an error here, you will need to follow the following steps:
 
 You are going to do a purge to clear out anything that might trigger an error.
-       apt purge docker-compose
+```bash       
+> apt purge docker-compose
+```
 	   
 Next, you are going to check and make sure that you are on the latest version of Docker-compse.
-      docker-compose --version
+```bash      
+> docker-compose --version
+```
 	  
 You will now need to curl that latest version if you are not on the latest version of compose. 
-      sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```bash
+> sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
 	 
 Now you will need to give compose the execute permission	 
-      sudo chmod +x /usr/local/bin/docker-compose
+```bash
+> sudo chmod +x /usr/local/bin/docker-compose
+```
 
 Double-check the version you are on.
-      docker-compose --version
-   
+```bash
+> docker-compose --version
+```   
 Run the prod.yaml do build up the container and it should run PTP
-   docker-compose -f docker-compose.prod.yml up
-
+```bash
+> docker-compose -f docker-compose.prod.yml up
+```
 
 
 Once all prerequisites and dependencies are met, an instance of RE can be spun up by running the following command (be sure to specify the correct assessment type with the `-r` flag):
